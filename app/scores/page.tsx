@@ -353,7 +353,7 @@ export default function ScoresPage() {
         match={selectedMatch}
         onClose={() => setSelectedMatch(null)}
         isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
-        onToggleFavorite={(id: string) => toggleFavorite(id)}
+        onToggleFavorite={(e, matchId) => toggleFavorite(matchId)}
       />
 
       <SearchModal
