@@ -140,20 +140,21 @@ export default function ScoresPage() {
     return matchesSport && matchesLive;
   });
 
-  const toggleFavorite = (id: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
-    );
-  };
+      const toggleFavorite = (id: string) => {
+        setFavorites((prev: string[]) =>
+          prev.includes(id)
+            ? prev.filter((item) => item !== id)
+            : [...prev, id]
+        );
+      };
 
   const handleOpenMatch = (f: typeof fixtures[0]) => {
     const found = MATCHES_DATA.find((m) => m.id === f.id) || {
       id: f.id,
       leagueId: "general",
       leagueName: f.league,
-      sport: f.sport as any,
-      status: f.status as any,
+      sport: f.sport as Match["sport"],
+      status: f.status as Match["status"],
       minute: f.minute || "FT",
       kickoffTime: f.time,
       date: "2026-10-26",
@@ -267,7 +268,7 @@ export default function ScoresPage() {
                   <div className="flex items-center gap-3 md:w-56 shrink-0">
                     <button
                       type="button"
-                      onClick={(e) => toggleFavorite(f.id, e)}
+                       onClick={(e) => {e.stopPropagation();toggleFavorite(f.id);}}
                       className={`p-1 transition-colors ${
                         isFav ? "text-amber-500" : "text-neutral-300 hover:text-neutral-500"
                       }`}
@@ -352,7 +353,7 @@ export default function ScoresPage() {
         match={selectedMatch}
         onClose={() => setSelectedMatch(null)}
         isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
-        onToggleFavorite={(id) => setFavorites(prev => prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id])}
+        onToggleFavorite={(id: string) => toggleFavorite(id)}
       />
 
       <SearchModal

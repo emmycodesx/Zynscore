@@ -6,45 +6,14 @@ export default function Footer() {
   return (
     <footer className="w-full bg-black text-white overflow-hidden border-t border-neutral-900">
       
-      {/* 1. TOP HERO: Massive Knockout Masked Typography (zynscore) */}
-      <div className="relative w-full overflow-hidden text-center select-none pt-12 sm:pt-16 pb-10 sm:pb-14 border-b border-neutral-900/80 px-2">
-        {/* Subtle Ambient Backlight Glow for maximum vibrance */}
-        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none -z-0">
-          <div className="w-5/6 h-36 sm:h-52 bg-gradient-to-r from-blue-500/15 via-purple-500/20 to-emerald-500/15 blur-3xl rounded-full" />
-        </div>
-
-        <span
-          className="relative z-10 block font-heading font-black tracking-[-0.03em] lowercase leading-[0.8] text-[21vw] sm:text-[20.5vw] lg:text-[20vw] transition-transform duration-700 hover:scale-[1.01]"
-          style={{
-            backgroundImage:
-              "linear-gradient(180deg, rgba(255, 255, 255, 0.38) 0%, rgba(200, 220, 255, 0.22) 50%, rgba(255, 255, 255, 0.32) 100%), url('/images/basketball.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "46% 36%",
-            backgroundRepeat: "no-repeat",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            color: "transparent",
-            WebkitTextStroke: "1.5px rgba(255, 255, 255, 0.45)",
-            filter:
-              "brightness(1.22) contrast(1.08) saturate(1.15) drop-shadow(0 4px 24px rgba(0,0,0,0.85))",
-            display: "block",
-            width: "100%",
-          }}
-        >
-          zynscore
-        </span>
-      </div>
-
-      {/* 2. MIDDLE & BOTTOM CONTAINER: Links, Socials & Baseline Copyright */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 pb-10">
-        
         {/* Navigation Grid: Brand Statement & Columns */}
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-8 items-start">
-          
           {/* Left Column: Description & Social Icons */}
           <div className="md:col-span-6 lg:col-span-6 flex flex-col items-start">
             <p className="text-sm sm:text-base leading-relaxed text-neutral-400 max-w-md font-normal">
-              Your world of sports, all in one place. Stay updated with the latest news, features, and everything happening in sports.
+              Your world of sports, all in one place. Stay updated with the
+              latest news, features, and everything happening in sports.
             </p>
 
             {/* Social Icons Row */}
@@ -105,7 +74,10 @@ export default function Footer() {
                   viewBox="0 0 24 24"
                 >
                   <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-                  <polygon points="10 15 15 12 10 9 10 15" fill="currentColor" />
+                  <polygon
+                    points="10 15 15 12 10 9 10 15"
+                    fill="currentColor"
+                  />
                 </svg>
               </a>
 
@@ -130,7 +102,6 @@ export default function Footer() {
 
           {/* Right Area: Explore & Company Columns */}
           <div className="md:col-span-6 lg:col-span-6 grid grid-cols-2 gap-8 md:pl-12 lg:pl-20">
-            
             {/* EXPLORE Column */}
             <div>
               <h4 className="font-heading text-xs font-black uppercase tracking-widest text-white mb-5">
@@ -212,9 +183,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-
           </div>
-
         </div>
 
         {/* 3. BASELINE: Divider & Copyright Row */}
@@ -222,9 +191,7 @@ export default function Footer() {
           <span>© 2026 ZynScore | All rights reserved.</span>
           <span>Built for the love of sports.</span>
         </div>
-
       </div>
-
     </footer>
   );
 }
