@@ -295,7 +295,13 @@ export default function LiveMatchesPage() {
         match={selectedMatch}
         onClose={() => setSelectedMatch(null)}
         isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
-        onToggleFavorite={(id) => setFavorites(prev => prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id])}
+              onToggleFavorite={(e, id) =>
+        setFavorites(prev =>
+          prev.includes(id)
+            ? prev.filter(i => i !== id)
+            : [...prev, id]
+        )
+        }
       />
 
       <SearchModal
